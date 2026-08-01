@@ -9,7 +9,7 @@ const plans = [
     icon: "/mockups/icon-plan-basico.png",
     title: "Plan Básico",
     tagline: "Perfecto para emprendedores que están comenzando.",
-    price: "19.990",
+    price: "24.990",
     period: "/mes",
     features: [
       "Declaración de Impuestos Mensual F29",
