@@ -22,7 +22,7 @@ export default function Somos() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center lg:px-8">
         <h2
-          className="text-4xl font-extrabold text-balance text-navy sm:text-5xl"
+          className="reveal text-4xl font-extrabold text-balance text-navy sm:text-5xl"
           style={{
             fontFamily: "var(--font-poppins)",
             lineHeight: 1.02,
@@ -46,7 +46,7 @@ export default function Somos() {
           />
         </svg>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-navy/70">
+        <p className="reveal mx-auto mt-6 max-w-2xl text-lg text-navy/70">
           En {site.name} creemos que una buena contabilidad es clave para el
           crecimiento de tu negocio. Por eso, ofrecemos un servicio cercano,
           personalizado y transparente, adaptado a las necesidades de cada
@@ -57,19 +57,15 @@ export default function Somos() {
           {site.founders.map(({ name, role, subrole, photo }) => (
             <div
               key={name}
-              className="rounded-[28px] bg-white/70 p-8 text-center shadow-lg shadow-primary/10 ring-1 ring-white/60"
+              className="reveal hover-zoom rounded-[28px] bg-white/70 p-8 text-center shadow-lg shadow-primary/10 ring-1 ring-white/60"
             >
-              <div className="mx-auto w-fit rounded-full bg-gradient-to-br from-pink via-pink-light to-primary p-[5px] shadow-lg shadow-primary/20">
-                <div className="overflow-hidden rounded-full ring-4 ring-white/80">
-                  <Image
-                    src={photo}
-                    alt={name}
-                    width={160}
-                    height={160}
-                    className="h-32 w-32 object-cover object-center sm:h-36 sm:w-36"
-                  />
-                </div>
-              </div>
+              <Image
+                src={photo}
+                alt={name}
+                width={160}
+                height={160}
+                className="mx-auto h-32 w-32 rounded-full object-cover object-center shadow-lg shadow-primary/15 ring-4 ring-white sm:h-36 sm:w-36"
+              />
 
               <div className="mt-4 flex items-center justify-center gap-1.5">
                 <span className="h-2 w-2 rounded-full bg-pink" />

@@ -24,7 +24,7 @@ const testimonials = [
 ];
 
 const trustItems = [
-  { icon: "/mockups/icon-rec-confianza.png", title: "Confianza", text: "Más de 200 clientes nos recomiendan." },
+  { icon: "/mockups/icon-rec-confianza.png", title: "Confianza", text: "+400 clientes nos recomiendan." },
   { icon: "/mockups/icon-rec-cercania.png", title: "Cercanía", text: "Atención rápida, clara y personalizada." },
   { icon: "/mockups/icon-rec-compromiso.png", title: "Compromiso", text: "Nos involucramos en el crecimiento de tu negocio." },
   { icon: "/mockups/icon-rec-resultados.png", title: "Resultados", text: "Orden financiero y tranquilidad para tomar mejores decisiones." },
@@ -44,7 +44,7 @@ export default function Testimonios() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-5 text-center lg:px-8">
         <h2
-          className="text-4xl font-extrabold text-balance sm:text-5xl"
+          className="reveal text-4xl font-extrabold text-balance sm:text-5xl"
           style={{
             fontFamily: "var(--font-poppins)",
             lineHeight: 1.05,
@@ -74,15 +74,15 @@ export default function Testimonios() {
             <Heart size={30} className="fill-pink text-pink" />
           </span>
         </h2>
-        <p className="mt-5 text-navy/70">
+        <p className="reveal mt-5 text-navy/70">
           La <span className="font-semibold text-pink-dark">confianza</span> de nuestros
           clientes es nuestro mayor <span className="font-semibold text-pink-dark">orgullo</span>.
         </p>
 
         <div className="mt-14 grid items-stretch gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map(({ name, avatar, quote }) => (
-            <div key={name} className="relative h-full">
-              <div className="relative flex h-full flex-col rounded-[28px] bg-white p-6 text-left shadow-[0_20px_45px_-15px_rgba(124,92,214,0.22)] ring-1 ring-[#ece7f5]">
+            <div key={name} className="reveal relative h-full">
+              <div className="hover-zoom relative flex h-full flex-col rounded-[28px] bg-white p-6 text-left shadow-[0_20px_45px_-15px_rgba(124,92,214,0.22)] ring-1 ring-[#ece7f5]">
                 <div className="flex items-center gap-3">
                   <Image
                     src={avatar}
@@ -115,7 +115,7 @@ export default function Testimonios() {
           ))}
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-6 rounded-3xl bg-white/80 p-6 text-left shadow-sm ring-1 ring-black/5 sm:grid-cols-4 lg:p-8">
+        <div className="reveal mt-16 grid grid-cols-2 gap-6 rounded-3xl bg-white/80 p-6 text-left shadow-sm ring-1 ring-black/5 sm:grid-cols-4 lg:p-8">
           {trustItems.map(({ icon, title, text }) => (
             <div key={title} className="flex items-start gap-3">
               <Image

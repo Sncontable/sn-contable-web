@@ -11,7 +11,7 @@ export const site = {
   email: "contacto@sncontable.cl",
   instagram: "https://instagram.com/sncontable",
   instagramHandle: "@sncontable",
-  hours: "Lunes a Viernes de 09:00 a 20:00 horas",
+  hours: "Lunes a Viernes de 09:00 a 19:00 horas",
   paymentMethods: "Transferencia",
   founders: [
     {

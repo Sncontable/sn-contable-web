@@ -3,6 +3,7 @@ import { Baloo_2, Plus_Jakarta_Sans, Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsappFloatingButton from "@/components/WhatsappFloatingButton";
+import ScrollReveal from "@/components/ScrollReveal";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -101,6 +102,11 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js');",
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
@@ -108,6 +114,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsappFloatingButton />
+        <ScrollReveal />
       </body>
     </html>
   );

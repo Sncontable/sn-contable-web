@@ -49,7 +49,7 @@ export default function Recursos() {
       <Dot className="absolute right-[6%] bottom-1/3 hidden lg:block" color="var(--color-pink)" size={10} delay={1.7} />
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="reveal mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full bg-pink-light/40 px-4 py-1.5 text-sm font-heading font-bold uppercase tracking-wide text-pink-dark">
             Recursos tributarios
           </span>
@@ -85,7 +85,7 @@ export default function Recursos() {
           {resources.map(({ icon, tag, tagClass, title, text }) => (
             <div
               key={title}
-              className="flex flex-col rounded-[28px] bg-white p-6 shadow-lg shadow-primary/10 ring-1 ring-black/5"
+              className="reveal hover-zoom flex flex-col rounded-[28px] bg-white p-6 shadow-lg shadow-primary/10 ring-1 ring-black/5"
             >
               <Image
                 src={icon}
@@ -112,7 +112,7 @@ export default function Recursos() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-[28px] bg-white p-6 shadow-lg shadow-primary/10 ring-1 ring-black/5 sm:flex-row">
+        <div className="reveal mt-10 flex flex-col items-center justify-between gap-4 rounded-[28px] bg-white p-6 shadow-lg shadow-primary/10 ring-1 ring-black/5 sm:flex-row">
           <p className="flex items-center gap-3 font-heading font-semibold text-navy">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#F9B8DD] to-[#EE7CBC] text-white shadow-md shadow-pink/25">
               <Lightbulb size={20} />

@@ -9,12 +9,12 @@ const plans = [
     icon: "/mockups/icon-plan-basico.png",
     title: "Plan Básico",
     tagline: "Perfecto para emprendedores que están comenzando.",
-    price: "24.990",
+    price: "19.990",
     period: "/mes",
     features: [
       "Declaración de Impuestos Mensual F29",
       "Recordatorios de pagos",
-      "Resumen y revisión de ventas, compras y honorarios",
+      "Revisión de ventas, compras y honorarios",
       "Envío de certificados tributarios",
       "Peticiones administrativas",
       "Modificaciones de actividades o domicilio",
@@ -88,7 +88,7 @@ export default function Servicios() {
       <Dot className="absolute left-[6%] bottom-16 hidden sm:block" color="var(--color-pink)" size={10} delay={2.2} />
 
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="reveal mx-auto max-w-2xl text-center">
           <p className="flex items-center justify-center gap-2 font-heading font-semibold text-pink-dark">
             <span className="h-1.5 w-1.5 rounded-full bg-pink" />
             Nuestros servicios y planes
@@ -118,7 +118,7 @@ export default function Servicios() {
           {plans.map(({ icon, title, tagline, price, period, note, features }) => (
             <div
               key={title}
-              className="flex flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-lg"
+              className="reveal hover-zoom flex flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5"
             >
               <Image
                 src={icon}
@@ -157,7 +157,7 @@ export default function Servicios() {
           ))}
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-6 rounded-3xl bg-white/80 p-6 shadow-sm ring-1 ring-black/5 sm:grid-cols-4 lg:p-8">
+        <div className="reveal mt-14 grid grid-cols-2 gap-6 rounded-3xl bg-white/80 p-6 shadow-sm ring-1 ring-black/5 sm:grid-cols-4 lg:p-8">
           {trustItems.map(({ icon, title, text }) => (
             <div key={title} className="flex items-start gap-3">
               <Image

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, Clock, MessageCircle, CreditCard, Heart } from "lucide-react";
+import { Mail, Clock, CreditCard, Heart } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
 import { site, whatsappLink } from "@/lib/site";
+import WhatsappIcon from "@/components/WhatsappIcon";
 
 export default function Footer() {
   return (
@@ -11,11 +12,11 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-3">
           <div>
             <Image
-              src="/brand/logo-trimmed.png"
+              src="/brand/logo-footer.png"
               alt={`${site.name} - ${site.tagline}`}
-              width={220}
-              height={68}
-              className="h-11 w-auto brightness-0 invert"
+              width={412}
+              height={127}
+              className="h-14 w-auto sm:h-16"
             />
             <p className="mt-5 max-w-xs text-white/80">
               Nos encargamos de tu contabilidad para que tú te enfoques en hacer{" "}
@@ -29,16 +30,21 @@ export default function Footer() {
 
           <div>
             <h3 className="font-heading text-lg font-bold text-pink-light">
-              Contáctanos
+              Escríbenos
             </h3>
             <ul className="mt-4 space-y-4">
               <li className="flex items-start gap-3">
-                <Phone size={20} className="mt-0.5 shrink-0 text-pink-light" />
+                <WhatsappIcon size={20} className="mt-0.5 shrink-0 text-[#25D366]" />
                 <div>
-                  <a href={`tel:${site.phoneHref}`} className="font-semibold hover:underline">
+                  <a
+                    href={whatsappLink("Hola, quisiera más información sobre sus servicios.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold hover:underline"
+                  >
                     {site.phone}
                   </a>
-                  <p className="text-sm text-white/70">Llámanos o escríbenos</p>
+                  <p className="text-sm text-white/70">Escríbenos por WhatsApp</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -48,6 +54,20 @@ export default function Footer() {
                     {site.email}
                   </a>
                   <p className="text-sm text-white/70">Te responderemos a la brevedad</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaInstagram size={20} className="mt-0.5 shrink-0 text-pink-light" />
+                <div>
+                  <a
+                    href={site.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold hover:underline"
+                  >
+                    {site.instagramHandle}
+                  </a>
+                  <p className="text-sm text-white/70">Síguenos en Instagram</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -78,7 +98,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 rounded-2xl bg-white/10 px-5 py-4 text-center transition-colors hover:bg-white/20"
               >
-                <MessageCircle size={22} />
+                <WhatsappIcon size={22} />
                 <span className="text-sm">Escríbenos</span>
               </a>
             </div>

@@ -2,7 +2,8 @@
 
 import { useState, type FormEvent } from "react";
 import Image from "next/image";
-import { Phone, Mail, User, Lock, MessageCircle } from "lucide-react";
+import { Mail, User, Lock, MessageCircle } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
 import { site, whatsappLink } from "@/lib/site";
 import WhatsappIcon from "@/components/WhatsappIcon";
 import { Dot } from "@/components/Decor";
@@ -39,7 +40,7 @@ export default function Contacto() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-5 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative">
+          <div className="reveal relative">
             {/* Ilustración del sobre */}
             <Image
               src="/mockups/esc-envelope.png"
@@ -74,12 +75,17 @@ export default function Contacto() {
 
             <ul className="relative z-10 mt-8 space-y-5">
               <li className="flex items-center gap-4">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#F9B8DD] to-[#EE7CBC] text-white shadow-md shadow-pink/25">
-                  <Phone size={24} className="fill-white" />
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#5FE197] to-[#25D366] text-white shadow-md shadow-[#25D366]/25">
+                  <WhatsappIcon size={24} />
                 </span>
                 <div>
-                  <p className="font-heading font-bold text-navy">Teléfono</p>
-                  <a href={`tel:${site.phoneHref}`} className="text-navy/70 hover:underline">
+                  <p className="font-heading font-bold text-navy">WhatsApp</p>
+                  <a
+                    href={whatsappLink("Hola, quisiera más información sobre sus servicios.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-navy/70 hover:underline"
+                  >
                     {site.phone}
                   </a>
                 </div>
@@ -96,18 +102,18 @@ export default function Contacto() {
                 </div>
               </li>
               <li className="flex items-center gap-4">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#5FE197] to-[#25D366] text-white shadow-md shadow-[#25D366]/25">
-                  <WhatsappIcon size={24} />
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white shadow-md shadow-pink/25">
+                  <FaInstagram size={24} />
                 </span>
                 <div>
-                  <p className="font-heading font-bold text-navy">WhatsApp</p>
+                  <p className="font-heading font-bold text-navy">Instagram</p>
                   <a
-                    href={whatsappLink("Hola, quisiera más información sobre sus servicios.")}
+                    href={site.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-navy/70 hover:underline"
                   >
-                    {site.phone}
+                    {site.instagramHandle}
                   </a>
                 </div>
               </li>
@@ -116,7 +122,7 @@ export default function Contacto() {
 
           <form
             onSubmit={handleSubmit}
-            className="relative z-10 rounded-[28px] bg-white p-7 shadow-xl shadow-primary/10 ring-1 ring-black/5 sm:p-8"
+            className="reveal relative z-10 rounded-[28px] bg-white p-7 shadow-xl shadow-primary/10 ring-1 ring-black/5 sm:p-8"
           >
             <div className="flex items-center gap-3">
               <Image
