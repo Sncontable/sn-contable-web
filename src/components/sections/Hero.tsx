@@ -40,18 +40,25 @@ export default function Hero() {
       <Dot className="absolute right-[4%] bottom-24 hidden sm:block" color="var(--color-pink)" size={10} delay={2} />
 
       <div className="mx-auto max-w-7xl px-5 pb-16 pt-14 lg:px-8 lg:pt-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-4">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-pink/30 bg-white/70 px-4 py-2 text-sm font-semibold text-navy shadow-sm">
               <Heart size={16} className="fill-pink text-pink" />
               Contabilidad clara, cercana y confiable
             </span>
 
-            <h1 className="mt-6 font-heading text-4xl font-extrabold leading-tight text-balance sm:text-5xl lg:text-[3.4rem]">
-              <span className="text-navy">Contabilidad, </span>
-              <span className="text-pink-dark">remuneraciones y </span>
-              <span className="text-navy">asesoría tributaria </span>
-              <span className="text-pink-dark">a tu medida</span>
+            <h1
+              className="mt-6 text-4xl font-extrabold text-balance sm:text-5xl lg:text-[3.4rem]"
+              style={{
+                fontFamily: "var(--font-poppins)",
+                lineHeight: 0.98,
+                letterSpacing: "-0.035em",
+              }}
+            >
+              <span className="block text-[#082C73]">Contabilidad,</span>
+              <span className="block text-[#ED68AC]">remuneraciones y</span>
+              <span className="block text-[#082C73]">asesoría tributaria</span>
+              <span className="block text-[#ED68AC]">a tu medida</span>
             </h1>
 
             <p className="mt-6 max-w-lg text-lg text-navy/70">
@@ -68,7 +75,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+          <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
             <Image
               src="/mockups/hero-illustration.png"
               alt={`Asesora de ${site.name} trabajando en su notebook`}
