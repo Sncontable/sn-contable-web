@@ -1,11 +1,26 @@
 import Image from "next/image";
-import { Heart, Users, MessageCircle, HeartHandshake, TrendingUp } from "lucide-react";
+import { Heart, Star, Users, MessageCircle, HeartHandshake, TrendingUp } from "lucide-react";
 import { Sparkle, Dot } from "@/components/Decor";
 
 const testimonials = [
-  { name: "klaudiamerica", image: "/testimonials/klaudiamerica.jpg" },
-  { name: "Claudia Castro", image: "/testimonials/claudia-castro.jpg" },
-  { name: "insignia.spa", image: "/testimonials/insignia-spa.jpg" },
+  {
+    name: "coy_plussize",
+    avatar: "/testimonials/coy-plussize.png",
+    quote:
+      "La mejor!!! La verdad es que he descansado en usted, era tremendo no tener respuestas con otros contadores o no sentir la confianza 100% gracias por todo!!",
+  },
+  {
+    name: "insignia.spa",
+    avatar: "/testimonials/insignia-spa.png",
+    quote:
+      "Sin duda el mejor servicio que pude haber encontrado muy responsable y muy transparente su trabajo ademas destacar la buena disposición siempre 💗✨",
+  },
+  {
+    name: "grido.hualpen",
+    avatar: "/testimonials/grido-hualpen.png",
+    quote:
+      "Muy buen servicio y sobre todo confiable que es lo que buscamos hoy en día, siempre atenta Camila a cualquier consulta y asesoramiento muchas gracias y felicidades que sean muchos más 💗",
+  },
 ];
 
 const trustItems = [
@@ -24,34 +39,65 @@ export default function Testimonios() {
       <Dot className="absolute right-[4%] bottom-12 hidden sm:block" color="var(--color-pink)" size={10} delay={2.4} />
 
       <div className="mx-auto max-w-6xl px-5 text-center lg:px-8">
-        <h2 className="flex flex-wrap items-center justify-center gap-3 font-heading text-3xl font-extrabold sm:text-4xl">
-          <span className="text-navy">Recomendación de</span>
-          <span className="text-pink-dark">Clientes</span>
-          <Heart size={30} className="fill-pink text-pink" />
+        <h2 className="font-heading text-4xl font-extrabold sm:text-5xl">
+          <span className="block text-navy">Recomendación</span>
+          <span className="mt-2 flex items-center justify-center gap-2">
+            <span className="text-navy">de</span>
+            <span className="relative text-pink-dark">
+              Clientes
+              <svg
+                viewBox="0 0 120 14"
+                className="absolute -bottom-2 left-0 h-3 w-full text-pink"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 9C20 2 40 2 60 6C80 10 100 10 118 4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+            <Heart size={30} className="fill-pink text-pink" />
+          </span>
         </h2>
-        <p className="mt-4 text-navy/70">
+        <p className="mt-5 text-navy/70">
           La <span className="font-semibold text-pink-dark">confianza</span> de nuestros
           clientes es nuestro mayor <span className="font-semibold text-pink-dark">orgullo</span>.
         </p>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map(({ name, image }) => (
-            <div
-              key={name}
-              className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5"
-            >
-              <Image
-                src={image}
-                alt={`Recomendación de ${name} sobre ${"SN Contable"}`}
-                width={720}
-                height={960}
-                className="aspect-[3/4] w-full object-cover"
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map(({ name, avatar, quote }) => (
+            <div key={name} className="relative">
+              <div className="flex flex-col rounded-3xl bg-white p-6 text-left shadow-md shadow-primary/10 ring-1 ring-black/5">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={avatar}
+                    alt={name}
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-white"
+                  />
+                  <div className="flex gap-0.5 text-pink">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={16} className="fill-pink text-pink" />
+                    ))}
+                  </div>
+                </div>
+                <p className="mt-4 flex-1 text-navy/75">&ldquo;{quote}&rdquo;</p>
+                <p className="mt-4 font-heading font-bold text-navy">{name}</p>
+              </div>
+              <span
+                className="absolute -bottom-2 left-8 h-5 w-5 rotate-45 rounded-sm bg-white ring-1 ring-black/5"
+                aria-hidden="true"
               />
             </div>
           ))}
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-6 rounded-3xl bg-white/80 p-6 text-left shadow-sm ring-1 ring-black/5 sm:grid-cols-4 lg:p-8">
+        <div className="mt-16 grid grid-cols-2 gap-6 rounded-3xl bg-white/80 p-6 text-left shadow-sm ring-1 ring-black/5 sm:grid-cols-4 lg:p-8">
           {trustItems.map(({ icon: Icon, title, text }) => (
             <div key={title} className="flex items-start gap-3">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-light/50 text-primary-dark">

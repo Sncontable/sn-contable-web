@@ -72,8 +72,8 @@ export default function Hero() {
             <Image
               src="/mockups/hero-illustration.png"
               alt={`Asesora de ${site.name} trabajando en su notebook`}
-              width={1178}
-              height={893}
+              width={1317}
+              height={817}
               priority
               className="w-full drop-shadow-xl"
             />
