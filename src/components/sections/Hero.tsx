@@ -68,15 +68,14 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="absolute -inset-8 -z-10 rounded-[3rem] bg-white/40 blur-2xl" />
+          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
             <Image
               src="/mockups/hero-illustration.png"
               alt={`Asesora de ${site.name} trabajando en su notebook`}
-              width={815}
-              height={545}
+              width={1178}
+              height={893}
               priority
-              className="w-full rounded-[2rem] object-cover shadow-xl shadow-primary/10"
+              className="w-full drop-shadow-xl"
             />
           </div>
         </div>
