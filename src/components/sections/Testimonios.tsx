@@ -39,11 +39,18 @@ export default function Testimonios() {
       <Dot className="absolute right-[4%] bottom-12 hidden sm:block" color="var(--color-pink)" size={10} delay={2.4} />
 
       <div className="mx-auto max-w-6xl px-5 text-center lg:px-8">
-        <h2 className="font-heading text-4xl font-extrabold sm:text-5xl">
-          <span className="block text-navy">Recomendación</span>
+        <h2
+          className="text-4xl font-extrabold text-balance sm:text-5xl"
+          style={{
+            fontFamily: "var(--font-poppins)",
+            lineHeight: 1.05,
+            letterSpacing: "-0.035em",
+          }}
+        >
+          <span className="block text-[#082C73]">Recomendación</span>
           <span className="mt-2 flex items-center justify-center gap-2">
-            <span className="text-navy">de</span>
-            <span className="relative text-pink-dark">
+            <span className="text-[#082C73]">de</span>
+            <span className="relative text-[#ED68AC]">
               Clientes
               <svg
                 viewBox="0 0 120 14"

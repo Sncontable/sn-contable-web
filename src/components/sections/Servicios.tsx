@@ -94,9 +94,16 @@ export default function Servicios() {
             Nuestros servicios y planes
             <span className="h-1.5 w-1.5 rounded-full bg-pink" />
           </p>
-          <h2 className="mt-3 font-heading text-3xl font-extrabold sm:text-4xl">
-            <span className="text-navy">Contabilidad a tu medida, </span>
-            <span className="text-pink-dark">para que tú te enfoques en crecer.</span>
+          <h2
+            className="mt-3 text-3xl font-extrabold text-balance sm:text-4xl"
+            style={{
+              fontFamily: "var(--font-poppins)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.035em",
+            }}
+          >
+            <span className="text-[#082C73]">Contabilidad a tu medida, </span>
+            <span className="text-[#ED68AC]">para que tú te enfoques en crecer.</span>
           </h2>
           <p className="mt-4 text-navy/70">
             Planes flexibles, claros y sin letra chica. Tú eliges, nosotros nos
