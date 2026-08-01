@@ -30,9 +30,7 @@ export default function Contacto() {
       className="relative overflow-hidden scroll-mt-20 bg-section-gradient py-20"
     >
       {/* Decoración 3D */}
-      <Image src="/mockups/esc-envelope.png" alt="" aria-hidden width={480} height={480} className="pointer-events-none absolute left-1/2 top-1 z-0 hidden w-24 -translate-x-1/2 select-none lg:block xl:w-28" />
-      <Image src="/mockups/esc-plane.png" alt="" aria-hidden width={200} height={140} className="pointer-events-none absolute left-[7%] top-28 z-0 hidden w-14 select-none xl:block" />
-      <Image src="/mockups/esc-barchart.png" alt="" aria-hidden width={440} height={360} className="pointer-events-none absolute left-[1%] bottom-6 z-0 hidden w-24 select-none lg:block" />
+      <Image src="/mockups/esc-barchart.png" alt="" aria-hidden width={440} height={360} className="pointer-events-none absolute left-[1%] bottom-6 z-0 hidden w-24 select-none lg:block xl:w-28" />
       <Image src="/mockups/esc-plant.png" alt="" aria-hidden width={300} height={420} className="pointer-events-none absolute right-[1%] bottom-4 z-0 hidden w-24 select-none lg:block xl:w-28" />
       <Image src="/mockups/deco-sparkle-purple.png" alt="" aria-hidden width={128} height={128} className="pointer-events-none absolute right-[7%] top-10 z-0 hidden w-10 select-none sm:block" />
       <Image src="/mockups/deco-sparkle-pink.png" alt="" aria-hidden width={128} height={128} className="pointer-events-none absolute left-[43%] top-24 z-0 hidden w-8 select-none lg:block" />
@@ -41,9 +39,26 @@ export default function Contacto() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-5 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
+          <div className="relative">
+            {/* Ilustración del sobre */}
+            <Image
+              src="/mockups/esc-envelope.png"
+              alt=""
+              aria-hidden
+              width={480}
+              height={480}
+              className="pointer-events-none absolute -top-4 right-0 z-0 hidden w-56 select-none lg:block xl:-right-8 xl:w-72"
+            />
+            <Image
+              src="/mockups/esc-plane.png"
+              alt=""
+              aria-hidden
+              width={200}
+              height={140}
+              className="pointer-events-none absolute left-[39%] top-[47%] z-0 hidden w-11 select-none lg:block"
+            />
             <h2
-              className="text-4xl font-extrabold text-balance text-navy sm:text-5xl"
+              className="relative z-10 text-4xl font-extrabold text-balance text-navy sm:text-5xl"
               style={{
                 fontFamily: "var(--font-poppins)",
                 lineHeight: 1.02,
@@ -52,12 +67,12 @@ export default function Contacto() {
             >
               Escríbenos
             </h2>
-            <p className="mt-5 max-w-md text-lg text-navy/70">
+            <p className="relative z-10 mt-5 max-w-[15rem] text-lg text-navy/70">
               Estamos aquí para ayudarte. Cuéntanos cómo podemos apoyar a tu negocio,{" "}
               <span className="font-semibold text-pink-dark">¡será un gusto atenderte!</span>
             </p>
 
-            <ul className="mt-8 space-y-5">
+            <ul className="relative z-10 mt-8 space-y-5">
               <li className="flex items-center gap-4">
                 <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#F9B8DD] to-[#EE7CBC] text-white shadow-md shadow-pink/25">
                   <Phone size={24} className="fill-white" />
