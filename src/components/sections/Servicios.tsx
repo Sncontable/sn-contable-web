@@ -1,10 +1,11 @@
-import { FileCheck2, TrendingUp, ClipboardList, Rocket, Check, MessageCircle, HeartHandshake, ShieldCheck, Clock, Ruler } from "lucide-react";
+import Image from "next/image";
+import { Check, MessageCircle } from "lucide-react";
 import { whatsappLink } from "@/lib/site";
 import { Sparkle, Dot } from "@/components/Decor";
 
 const plans = [
   {
-    icon: FileCheck2,
+    icon: "/mockups/icon-plan-basico.png",
     title: "Plan Básico",
     tagline: "Perfecto para emprendedores que están comenzando.",
     price: "19.990",
@@ -20,7 +21,7 @@ const plans = [
     ],
   },
   {
-    icon: TrendingUp,
+    icon: "/mockups/icon-plan-intermedio.png",
     title: "Plan Intermedio",
     tagline: "Ideal para negocios en crecimiento.",
     price: "34.990",
@@ -37,7 +38,7 @@ const plans = [
     ],
   },
   {
-    icon: ClipboardList,
+    icon: "/mockups/icon-plan-remuneraciones.png",
     title: "Plan Remuneraciones",
     tagline: "Todo lo que necesitas para manejar a tu equipo.",
     price: "9.990",
@@ -53,7 +54,7 @@ const plans = [
     ],
   },
   {
-    icon: Rocket,
+    icon: "/mockups/icon-plan-formalizate.png",
     title: "Plan Formalízate",
     tagline: "Especial para emprendedores que quieran formalizarse.",
     price: "49.990",
@@ -71,10 +72,10 @@ const plans = [
 ];
 
 const trustItems = [
-  { icon: HeartHandshake, title: "Cercanía y confianza", text: "Te acompañamos en cada paso de tu negocio." },
-  { icon: ShieldCheck, title: "100% transparente", text: "Precios claros y sin costos ocultos." },
-  { icon: Clock, title: "Ahorra tiempo", text: "Nos encargamos de lo contable por ti." },
-  { icon: Ruler, title: "Hecho a tu medida", text: "Planes flexibles según las necesidades de tu negocio." },
+  { icon: "/mockups/icon-cercanos.png", title: "Cercanía y confianza", text: "Te acompañamos en cada paso de tu negocio." },
+  { icon: "/mockups/icon-confiables.png", title: "100% transparente", text: "Precios claros y sin costos ocultos." },
+  { icon: "/mockups/icon-a-tiempo.png", title: "Ahorra tiempo", text: "Nos encargamos de lo contable por ti." },
+  { icon: "/mockups/icon-a-medida.png", title: "Hecho a tu medida", text: "Planes flexibles según las necesidades de tu negocio." },
 ];
 
 export default function Servicios() {
@@ -106,14 +107,18 @@ export default function Servicios() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {plans.map(({ icon: Icon, title, tagline, price, period, note, features }) => (
+          {plans.map(({ icon, title, tagline, price, period, note, features }) => (
             <div
               key={title}
               className="flex flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-lg"
             >
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15 text-primary-dark">
-                <Icon size={26} />
-              </span>
+              <Image
+                src={icon}
+                alt={title}
+                width={72}
+                height={72}
+                className="h-16 w-16 object-contain"
+              />
               <h3 className="mt-5 font-heading text-xl font-bold text-navy">{title}</h3>
               <p className="mt-1 text-sm text-navy/60">{tagline}</p>
               <p className="mt-3 font-heading text-3xl font-extrabold text-pink-dark">
@@ -145,11 +150,15 @@ export default function Servicios() {
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-6 rounded-3xl bg-white/80 p-6 shadow-sm ring-1 ring-black/5 sm:grid-cols-4 lg:p-8">
-          {trustItems.map(({ icon: Icon, title, text }) => (
+          {trustItems.map(({ icon, title, text }) => (
             <div key={title} className="flex items-start gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-pink-light/50 text-pink-dark">
-                <Icon size={20} />
-              </span>
+              <Image
+                src={icon}
+                alt={title}
+                width={44}
+                height={44}
+                className="h-11 w-11 shrink-0 object-contain"
+              />
               <div>
                 <p className="font-heading font-bold text-navy">{title}</p>
                 <p className="text-sm text-navy/60">{text}</p>
