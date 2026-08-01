@@ -18,11 +18,13 @@ export const site = {
       name: "Camila Altamirano Araya",
       role: "Contadora Pública y Auditora",
       subrole: "Técnico en Administración de Recursos Humanos",
+      photo: "/team/camila.jpg",
     },
     {
       name: "Matías Fernández Orellana",
       role: "Ingeniero en Recursos Humanos",
       subrole: "Técnico en Administración de Recursos Humanos",
+      photo: "/team/matias.jpg",
     },
   ],
 } as const;

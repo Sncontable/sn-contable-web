@@ -1,21 +1,10 @@
-import { Heart, Star, Users, MessageCircle, HeartHandshake, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { Heart, Users, MessageCircle, HeartHandshake, TrendingUp } from "lucide-react";
 
 const testimonials = [
-  {
-    name: "Carla",
-    quote:
-      "Siempre están disponibles para resolver mis dudas y me entregan todo al día. Me dan mucha tranquilidad saber que mi negocio está en buenas manos.",
-  },
-  {
-    name: "Felipe",
-    quote:
-      "Excelentes profesionales, muy cercanos y comprometidos. Gracias a su asesoría hemos podido crecer y ordenarnos financieramente.",
-  },
-  {
-    name: "Valentina",
-    quote:
-      "Me encanta su atención personalizada y la rapidez con la que responden. 100% recomendados, se nota que realmente les importa.",
-  },
+  { name: "klaudiamerica", image: "/testimonials/klaudiamerica.jpg" },
+  { name: "Claudia Castro", image: "/testimonials/claudia-castro.jpg" },
+  { name: "insignia.spa", image: "/testimonials/insignia-spa.jpg" },
 ];
 
 const trustItems = [
@@ -39,24 +28,19 @@ export default function Testimonios() {
           clientes es nuestro mayor <span className="font-semibold text-pink-dark">orgullo</span>.
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {testimonials.map(({ name, quote }) => (
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map(({ name, image }) => (
             <div
               key={name}
-              className="flex flex-col rounded-3xl bg-white p-6 text-left shadow-sm ring-1 ring-black/5"
+              className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5"
             >
-              <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/20 font-heading font-bold text-primary-dark">
-                  {name[0]}
-                </span>
-                <div className="flex gap-0.5 text-pink">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={16} className="fill-pink text-pink" />
-                  ))}
-                </div>
-              </div>
-              <p className="mt-4 flex-1 text-navy/75">&ldquo;{quote}&rdquo;</p>
-              <p className="mt-4 font-heading font-bold text-navy">{name}</p>
+              <Image
+                src={image}
+                alt={`Recomendación de ${name} sobre ${"SN Contable"}`}
+                width={720}
+                height={960}
+                className="aspect-[3/4] w-full object-cover"
+              />
             </div>
           ))}
         </div>

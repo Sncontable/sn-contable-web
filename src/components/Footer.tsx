@@ -96,7 +96,7 @@ export default function Footer() {
             <Heart size={14} className="fill-pink-light text-pink-light" />
             Gracias por confiar en nosotros.
           </p>
-          <p>© {new Date().getFullYear()} {site.name} SpA. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} {site.name}. Todos los derechos reservados.</p>
           <Link href="/#contacto" className="hover:text-white">
             Contáctanos
           </Link>

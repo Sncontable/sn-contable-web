@@ -1,57 +1,70 @@
-import { Laptop, ClipboardList, Home as HomeIcon, CalendarCheck, Check, MessageCircle, HeartHandshake, ShieldCheck, Clock, Ruler } from "lucide-react";
+import { FileCheck2, TrendingUp, ClipboardList, Rocket, Check, MessageCircle, HeartHandshake, ShieldCheck, Clock, Ruler } from "lucide-react";
 import { whatsappLink } from "@/lib/site";
 
 const plans = [
   {
-    icon: Laptop,
-    title: "Contabilidad Mensual",
+    icon: FileCheck2,
+    title: "Plan Básico",
+    tagline: "Perfecto para emprendedores que están comenzando.",
     price: "19.990",
-    period: "/mes + IVA",
+    period: "/mes",
     features: [
-      "Registro y clasificación de operaciones",
-      "Libro de compras y ventas",
-      "Conciliaciones bancarias",
-      "Estados financieros mensuales",
-      "Soporte contable permanente",
+      "Declaración de Impuestos Mensual F29",
+      "Recordatorios de pagos",
+      "Resumen y revisión de ventas, compras y honorarios",
+      "Envío de certificados tributarios",
+      "Peticiones administrativas",
+      "Modificaciones de actividades o domicilio",
+      "Asesoría personalizada vía WhatsApp",
+    ],
+  },
+  {
+    icon: TrendingUp,
+    title: "Plan Intermedio",
+    tagline: "Ideal para negocios en crecimiento.",
+    price: "34.990",
+    period: "/mes",
+    features: [
+      "Declaración de Impuestos Mensual F29",
+      "Recordatorio de pago",
+      "Balance anual",
+      "Revisión de ventas, compras y honorarios",
+      "Envío de certificados tributarios",
+      "Peticiones administrativas",
+      "Modificaciones de actividades o domicilio",
+      "Asesoría personalizada vía WhatsApp",
     ],
   },
   {
     icon: ClipboardList,
-    title: "Remuneraciones",
-    price: "14.990",
-    period: "/mes + IVA",
+    title: "Plan Remuneraciones",
+    tagline: "Todo lo que necesitas para manejar a tu equipo.",
+    price: "9.990",
+    period: "/mes por trabajador",
+    note: "A mayor cantidad de trabajadores, mayor descuento.",
     features: [
-      "Cálculo de sueldos e imposiciones",
-      "Liquidaciones de sueldo",
-      "Libro de remuneraciones",
-      "Previred y cumplimiento normativo",
-      "Asesoría laboral básica",
+      "Cálculo de liquidación de sueldo",
+      "Carga de Previred",
+      "Recordatorio de pago de imposiciones",
+      "Tramitación de licencias médicas",
+      "Confección de anexos de contratos y comprobantes de vacaciones",
+      "Asesoría personalizada vía WhatsApp",
     ],
   },
   {
-    icon: HomeIcon,
-    title: "Formalización de Empresas",
-    price: "69.990",
+    icon: Rocket,
+    title: "Plan Formalízate",
+    tagline: "Especial para emprendedores que quieran formalizarse.",
+    price: "49.990",
     period: "Pago único",
     features: [
-      "Asesoría para elegir tu mejor opción",
-      "Constitución de la empresa",
-      "Obtención de RUT e iniciación SII",
-      "Trámites y documentos incluidos",
-      "Acompañamiento personalizado",
-    ],
-  },
-  {
-    icon: CalendarCheck,
-    title: "Asesoría Tributaria",
-    price: "29.990",
-    period: "/hora + IVA",
-    features: [
-      "Revisión y planificación tributaria",
-      "Declaraciones de impuestos",
-      "Optimización de carga tributaria",
-      "Representación ante el SII",
-      "Asesoría personalizada",
+      "Creación de empresa",
+      "Asesoría sobre el tipo de empresa y régimen tributario",
+      "Inicio de actividades",
+      "E-RUT",
+      "Asesoría para inscripción de boletas y facturación electrónica",
+      "Asesoría para abrir cuenta bancaria de la empresa",
+      "1 mes gratis del Plan Básico de contabilidad mensual",
     ],
   },
 ];
@@ -81,10 +94,13 @@ export default function Servicios() {
             Planes flexibles, claros y sin letra chica. Tú eliges, nosotros nos
             encargamos del resto.
           </p>
+          <p className="mt-2 text-sm font-semibold text-primary-dark">
+            Todos nuestros planes están exentos de IVA.
+          </p>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {plans.map(({ icon: Icon, title, price, period, features }) => (
+          {plans.map(({ icon: Icon, title, tagline, price, period, note, features }) => (
             <div
               key={title}
               className="flex flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-lg"
@@ -93,11 +109,12 @@ export default function Servicios() {
                 <Icon size={26} />
               </span>
               <h3 className="mt-5 font-heading text-xl font-bold text-navy">{title}</h3>
-              <p className="mt-3 text-sm text-navy/60">Desde</p>
-              <p className="font-heading text-3xl font-extrabold text-pink-dark">
+              <p className="mt-1 text-sm text-navy/60">{tagline}</p>
+              <p className="mt-3 font-heading text-3xl font-extrabold text-pink-dark">
                 ${price}
                 <span className="ml-1 text-sm font-semibold text-navy/50">{period}</span>
               </p>
+              {note && <p className="mt-1 text-xs text-navy/50">{note}</p>}
 
               <ul className="mt-5 flex-1 space-y-3">
                 {features.map((f) => (
