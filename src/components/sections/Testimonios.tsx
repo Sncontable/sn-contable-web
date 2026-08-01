@@ -68,17 +68,17 @@ export default function Testimonios() {
           clientes es nuestro mayor <span className="font-semibold text-pink-dark">orgullo</span>.
         </p>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid items-stretch gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map(({ name, avatar, quote }) => (
-            <div key={name} className="relative">
-              <div className="flex flex-col rounded-3xl bg-white p-6 text-left shadow-md shadow-primary/10 ring-1 ring-black/5">
+            <div key={name} className="relative h-full pb-6">
+              <div className="flex h-full flex-col rounded-3xl bg-white p-6 text-left shadow-md shadow-primary/10 ring-1 ring-black/5">
                 <div className="flex items-center gap-3">
                   <Image
                     src={avatar}
                     alt={name}
                     width={48}
                     height={48}
-                    className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-white"
+                    className="h-12 w-12 shrink-0 rounded-full object-cover object-center ring-2 ring-white"
                   />
                   <div className="flex gap-0.5 text-pink">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -90,7 +90,11 @@ export default function Testimonios() {
                 <p className="mt-4 font-heading font-bold text-navy">{name}</p>
               </div>
               <span
-                className="absolute -bottom-2 left-8 h-5 w-5 rotate-45 rounded-sm bg-white ring-1 ring-black/5"
+                className="absolute bottom-1 left-10 h-6 w-6 rounded-full bg-white shadow-md shadow-primary/10 ring-1 ring-black/5"
+                aria-hidden="true"
+              />
+              <span
+                className="absolute bottom-[-6px] left-6 h-3.5 w-3.5 rounded-full bg-white shadow-sm ring-1 ring-black/5"
                 aria-hidden="true"
               />
             </div>
