@@ -89,14 +89,13 @@ export default function Testimonios() {
                 <p className="mt-4 flex-1 text-navy/75">&ldquo;{quote}&rdquo;</p>
                 <p className="mt-4 font-heading font-bold text-navy">{name}</p>
               </div>
-              <span
-                className="absolute bottom-1 left-10 h-6 w-6 rounded-full bg-white shadow-md shadow-primary/10 ring-1 ring-black/5"
+              <svg
+                viewBox="0 0 28 32"
+                className="absolute -bottom-[19px] left-8 h-8 w-7 drop-shadow-[0_4px_3px_rgba(0,0,0,0.06)]"
                 aria-hidden="true"
-              />
-              <span
-                className="absolute bottom-[-6px] left-6 h-3.5 w-3.5 rounded-full bg-white shadow-sm ring-1 ring-black/5"
-                aria-hidden="true"
-              />
+              >
+                <path d="M0 0C0 14 2 24 16 32C8 24 8 10 10 0Z" fill="white" />
+              </svg>
             </div>
           ))}
         </div>
