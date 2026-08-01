@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Heart, Star, Users, MessageCircle, HeartHandshake, TrendingUp } from "lucide-react";
-import { Sparkle, Dot } from "@/components/Decor";
+import { Heart, Star } from "lucide-react";
+import { Dot } from "@/components/Decor";
 
 const testimonials = [
   {
@@ -24,21 +24,25 @@ const testimonials = [
 ];
 
 const trustItems = [
-  { icon: Users, title: "Confianza", text: "Más de 200 clientes nos recomiendan." },
-  { icon: MessageCircle, title: "Cercanía", text: "Atención rápida, clara y personalizada." },
-  { icon: HeartHandshake, title: "Compromiso", text: "Nos involucramos en el crecimiento de tu negocio." },
-  { icon: TrendingUp, title: "Resultados", text: "Orden financiero y tranquilidad para tomar mejores decisiones." },
+  { icon: "/mockups/icon-rec-confianza.png", title: "Confianza", text: "Más de 200 clientes nos recomiendan." },
+  { icon: "/mockups/icon-rec-cercania.png", title: "Cercanía", text: "Atención rápida, clara y personalizada." },
+  { icon: "/mockups/icon-rec-compromiso.png", title: "Compromiso", text: "Nos involucramos en el crecimiento de tu negocio." },
+  { icon: "/mockups/icon-rec-resultados.png", title: "Resultados", text: "Orden financiero y tranquilidad para tomar mejores decisiones." },
 ];
 
 export default function Testimonios() {
   return (
     <section className="relative overflow-hidden bg-section-gradient py-20">
-      <Sparkle className="absolute left-[5%] top-14 hidden sm:block" color="var(--color-pink-light)" delay={0.4} />
-      <Sparkle className="absolute right-[6%] top-28 hidden lg:block" size={18} color="var(--color-primary-light)" delay={1.9} />
-      <Dot className="absolute left-[8%] bottom-24 hidden lg:block" color="var(--color-sky)" size={12} delay={1.2} />
-      <Dot className="absolute right-[4%] bottom-12 hidden sm:block" color="var(--color-pink)" size={10} delay={2.4} />
+      {/* Decoración 3D */}
+      <Image src="/mockups/deco-sparkle-pink.png" alt="" aria-hidden width={128} height={128} className="pointer-events-none absolute left-[4%] top-16 hidden w-11 select-none sm:block lg:w-14" />
+      <Image src="/mockups/deco-sparkle-purple.png" alt="" aria-hidden width={128} height={128} className="pointer-events-none absolute right-[5%] top-12 hidden w-12 select-none sm:block lg:w-16" />
+      <Image src="/mockups/deco-star-pink.png" alt="" aria-hidden width={96} height={96} className="pointer-events-none absolute left-[7%] bottom-28 hidden w-8 select-none lg:block lg:w-9" />
+      <Image src="/mockups/deco-heart-bubble.png" alt="" aria-hidden width={200} height={200} className="pointer-events-none absolute right-[3%] bottom-32 hidden w-16 select-none sm:block lg:w-24" />
+      <Image src="/mockups/deco-star-purple.png" alt="" aria-hidden width={96} height={96} className="pointer-events-none absolute right-[9%] bottom-20 hidden w-8 select-none lg:block lg:w-9" />
+      <Dot className="absolute left-[10%] top-28 hidden lg:block" color="var(--color-sky)" size={11} delay={1.2} />
+      <Dot className="absolute right-[14%] bottom-14 hidden sm:block" color="var(--color-pink)" size={9} delay={2.4} />
 
-      <div className="mx-auto max-w-6xl px-5 text-center lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-5 text-center lg:px-8">
         <h2
           className="text-4xl font-extrabold text-balance sm:text-5xl"
           style={{
@@ -97,22 +101,29 @@ export default function Testimonios() {
                 <p className="mt-4 font-heading font-bold text-navy">{name}</p>
               </div>
               <svg
-                viewBox="0 0 28 32"
-                className="absolute -bottom-[19px] left-8 h-8 w-7 drop-shadow-[0_4px_3px_rgba(0,0,0,0.06)]"
+                viewBox="0 0 30 24"
+                className="absolute -bottom-[14px] left-10 h-6 w-7 drop-shadow-[0_5px_3px_rgba(80,40,160,0.06)]"
                 aria-hidden="true"
               >
-                <path d="M0 0C0 14 2 24 16 32C8 24 8 10 10 0Z" fill="white" />
+                <path
+                  d="M3 0 L27 0 C23 4 19 12 17 19 C16 22 14 22 13 19 C11 12 7 4 3 0 Z"
+                  fill="white"
+                />
               </svg>
             </div>
           ))}
         </div>
 
         <div className="mt-16 grid grid-cols-2 gap-6 rounded-3xl bg-white/80 p-6 text-left shadow-sm ring-1 ring-black/5 sm:grid-cols-4 lg:p-8">
-          {trustItems.map(({ icon: Icon, title, text }) => (
+          {trustItems.map(({ icon, title, text }) => (
             <div key={title} className="flex items-start gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-light/50 text-primary-dark">
-                <Icon size={20} />
-              </span>
+              <Image
+                src={icon}
+                alt={title}
+                width={44}
+                height={44}
+                className="h-11 w-11 shrink-0 object-contain"
+              />
               <div>
                 <p className="font-heading font-bold text-navy">{title}</p>
                 <p className="text-sm text-navy/60">{text}</p>
