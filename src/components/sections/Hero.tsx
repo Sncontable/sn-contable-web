@@ -1,31 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ShieldCheck, Clock, Smile, ArrowRight } from "lucide-react";
+import { Heart, ArrowRight } from "lucide-react";
 import { site } from "@/lib/site";
 import { Sparkle, Dot } from "@/components/Decor";
 
 const trustItems = [
   {
-    icon: Heart,
-    iconClass: "bg-pink-light/50 text-pink-dark",
+    icon: "/mockups/icon-cercanos.png",
     title: "Cercanos",
     text: "Te acompañamos en cada paso de tu negocio.",
   },
   {
-    icon: ShieldCheck,
-    iconClass: "bg-primary-light/50 text-primary-dark",
+    icon: "/mockups/icon-confiables.png",
     title: "Confiables",
     text: "Información segura y asesoría profesional siempre.",
   },
   {
-    icon: Clock,
-    iconClass: "bg-sky-light text-sky-700",
+    icon: "/mockups/icon-a-tiempo.png",
     title: "A tiempo",
     text: "Cumplimos tus obligaciones sin estrés ni atrasos.",
   },
   {
-    icon: Smile,
-    iconClass: "bg-pink-light/50 text-pink-dark",
+    icon: "/mockups/icon-a-medida.png",
     title: "A tu medida",
     text: "Planes flexibles según las necesidades de tu negocio.",
   },
@@ -88,11 +84,15 @@ export default function Hero() {
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-6 rounded-3xl bg-white/80 p-6 shadow-sm ring-1 ring-black/5 sm:grid-cols-4 lg:p-8">
-          {trustItems.map(({ icon: Icon, iconClass, title, text }) => (
+          {trustItems.map(({ icon, title, text }) => (
             <div key={title} className="flex items-start gap-3">
-              <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${iconClass}`}>
-                <Icon size={20} />
-              </span>
+              <Image
+                src={icon}
+                alt={title}
+                width={56}
+                height={56}
+                className="h-14 w-14 shrink-0 object-contain"
+              />
               <div>
                 <p className="font-heading font-bold text-navy">{title}</p>
                 <p className="text-sm text-navy/60">{text}</p>
