@@ -16,6 +16,26 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  function handleNavClick(e: React.MouseEvent, href: string) {
+    // Solo interceptamos enlaces internos de esta misma página (inicio y anclas)
+    if (href !== "/" && !href.startsWith("/#")) return;
+    e.preventDefault();
+    setOpen(false);
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const behavior: ScrollBehavior = reduce ? "auto" : "smooth";
+    if (href === "/") {
+      window.scrollTo({ top: 0, behavior });
+      window.history.pushState(null, "", "/");
+      return;
+    }
+    const id = href.split("#")[1];
+    const el = id ? document.getElementById(id) : null;
+    if (el) {
+      el.scrollIntoView({ behavior, block: "start" });
+      window.history.pushState(null, "", `#${id}`);
+    }
+  }
+
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
@@ -35,6 +55,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="font-heading text-[17px] font-semibold text-navy transition-colors hover:text-primary-dark"
               >
                 {link.label}
@@ -71,7 +92,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className="font-heading text-lg font-semibold text-navy"
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                 >
                   {link.label}
                 </Link>
