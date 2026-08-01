@@ -100,7 +100,7 @@ export default function Recursos() {
               <h3 className="mt-3 font-heading text-lg font-bold text-navy">{title}</h3>
               <p className="mt-2 flex-1 text-sm text-navy/65">{text}</p>
               <a
-                href={whatsappLink(`Hola, tengo una consulta sobre "${title}".`)}
+                href={whatsappLink(`Hola, quiero más información sobre "${title}".`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 flex items-center gap-1 font-heading font-semibold text-pink-dark hover:underline"
