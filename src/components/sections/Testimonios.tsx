@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Heart, Users, MessageCircle, HeartHandshake, TrendingUp } from "lucide-react";
+import { Sparkle, Dot } from "@/components/Decor";
 
 const testimonials = [
   { name: "klaudiamerica", image: "/testimonials/klaudiamerica.jpg" },
@@ -16,7 +17,12 @@ const trustItems = [
 
 export default function Testimonios() {
   return (
-    <section className="bg-section-gradient py-20">
+    <section className="relative overflow-hidden bg-section-gradient py-20">
+      <Sparkle className="absolute left-[5%] top-14 hidden sm:block" color="var(--color-pink-light)" delay={0.4} />
+      <Sparkle className="absolute right-[6%] top-28 hidden lg:block" size={18} color="var(--color-primary-light)" delay={1.9} />
+      <Dot className="absolute left-[8%] bottom-24 hidden lg:block" color="var(--color-sky)" size={12} delay={1.2} />
+      <Dot className="absolute right-[4%] bottom-12 hidden sm:block" color="var(--color-pink)" size={10} delay={2.4} />
+
       <div className="mx-auto max-w-6xl px-5 text-center lg:px-8">
         <h2 className="flex flex-wrap items-center justify-center gap-3 font-heading text-3xl font-extrabold sm:text-4xl">
           <span className="text-navy">Recomendación de</span>

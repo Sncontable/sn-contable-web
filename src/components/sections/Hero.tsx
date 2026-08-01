@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart, ShieldCheck, Clock, Smile, ArrowRight } from "lucide-react";
 import { site } from "@/lib/site";
+import { Sparkle, Dot } from "@/components/Decor";
 
 const trustItems = [
   {
@@ -32,7 +33,12 @@ const trustItems = [
 
 export default function Hero() {
   return (
-    <section className="bg-hero-gradient">
+    <section className="relative overflow-hidden bg-hero-gradient">
+      <Sparkle className="absolute left-[6%] top-24 hidden lg:block" color="var(--color-primary-light)" delay={0.2} />
+      <Sparkle className="absolute right-[8%] top-16 hidden sm:block" color="var(--color-pink-light)" size={20} delay={1.4} />
+      <Dot className="absolute left-[3%] top-1/2 hidden lg:block" color="var(--color-sky)" size={16} delay={0.8} />
+      <Dot className="absolute right-[4%] bottom-24 hidden sm:block" color="var(--color-pink)" size={10} delay={2} />
+
       <div className="mx-auto max-w-7xl px-5 pb-16 pt-14 lg:px-8 lg:pt-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -67,8 +73,8 @@ export default function Hero() {
             <Image
               src="/mockups/hero-illustration.png"
               alt={`Asesora de ${site.name} trabajando en su notebook`}
-              width={831}
-              height={592}
+              width={815}
+              height={545}
               priority
               className="w-full rounded-[2rem] object-cover shadow-xl shadow-primary/10"
             />

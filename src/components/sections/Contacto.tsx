@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { Phone, Mail, MessageCircle, User, Lock, Send } from "lucide-react";
 import { site, whatsappLink } from "@/lib/site";
+import { Sparkle, Dot } from "@/components/Decor";
 
 export default function Contacto() {
   const [nombre, setNombre] = useState("");
@@ -22,7 +23,10 @@ export default function Contacto() {
   }
 
   return (
-    <section id="contacto" className="scroll-mt-20 bg-section-gradient py-20">
+    <section id="contacto" className="relative overflow-hidden scroll-mt-20 bg-section-gradient py-20">
+      <Sparkle className="absolute left-[5%] top-16 hidden lg:block" color="var(--color-primary-light)" delay={0.9} />
+      <Sparkle className="absolute right-[6%] bottom-24 hidden sm:block" size={18} color="var(--color-pink-light)" delay={2} />
+      <Dot className="absolute right-[4%] top-14 hidden sm:block" color="var(--color-sky)" size={12} delay={1.3} />
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>

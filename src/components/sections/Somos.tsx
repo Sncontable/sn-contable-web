@@ -1,10 +1,35 @@
 import Image from "next/image";
-import { Heart } from "lucide-react";
+import { Heart, Calculator, FileCheck, Sprout } from "lucide-react";
 import { site } from "@/lib/site";
+import { Sparkle, Dot, FloatingBadge } from "@/components/Decor";
 
 export default function Somos() {
   return (
-    <section id="somos" className="scroll-mt-20 bg-hero-gradient py-20">
+    <section id="somos" className="relative overflow-hidden scroll-mt-20 bg-hero-gradient py-20">
+      <FloatingBadge
+        className="left-[4%] top-28 hidden text-primary-dark lg:flex"
+        color="var(--color-primary-light)"
+        delay={0.3}
+      >
+        <Calculator size={24} />
+      </FloatingBadge>
+      <FloatingBadge
+        className="right-[5%] top-32 hidden text-pink-dark sm:flex"
+        color="var(--color-pink-light)"
+        delay={1.6}
+      >
+        <FileCheck size={24} />
+      </FloatingBadge>
+      <FloatingBadge
+        className="bottom-16 left-[6%] hidden text-sky-700 sm:flex"
+        color="var(--color-sky-light)"
+        delay={2.4}
+      >
+        <Sprout size={22} />
+      </FloatingBadge>
+      <Sparkle className="absolute right-[8%] bottom-20 hidden lg:block" color="var(--color-primary-light)" delay={1} />
+      <Dot className="absolute left-[10%] top-8 hidden sm:block" color="var(--color-pink)" size={10} delay={0.6} />
+
       <div className="mx-auto max-w-5xl px-5 text-center lg:px-8">
         <h2 className="font-heading text-4xl font-extrabold text-navy sm:text-5xl">
           Quiénes Somos

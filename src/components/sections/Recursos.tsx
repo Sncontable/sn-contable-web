@@ -1,5 +1,6 @@
-import { FileText, PieChart, Store, CalendarClock, ArrowRight, Lightbulb, MessageCircle } from "lucide-react";
+import { FileText, PieChart, Store, CalendarClock, ArrowRight, Lightbulb, MessageCircle, Mail } from "lucide-react";
 import { whatsappLink } from "@/lib/site";
+import { Sparkle, Dot, FloatingBadge } from "@/components/Decor";
 
 const resources = [
   {
@@ -34,7 +35,17 @@ const resources = [
 
 export default function Recursos() {
   return (
-    <section className="bg-hero-gradient py-20">
+    <section className="relative overflow-hidden bg-hero-gradient py-20">
+      <FloatingBadge
+        className="right-[5%] top-28 hidden text-primary-dark sm:flex"
+        color="var(--color-primary-light)"
+        delay={0.7}
+      >
+        <Mail size={24} />
+      </FloatingBadge>
+      <Sparkle className="absolute left-[5%] top-24 hidden lg:block" color="var(--color-pink-light)" delay={1.5} />
+      <Dot className="absolute left-[7%] bottom-16 hidden sm:block" color="var(--color-sky)" size={12} delay={2.1} />
+
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full bg-pink-light/40 px-4 py-1.5 text-sm font-heading font-bold text-pink-dark">

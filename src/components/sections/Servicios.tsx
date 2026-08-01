@@ -1,5 +1,6 @@
 import { FileCheck2, TrendingUp, ClipboardList, Rocket, Check, MessageCircle, HeartHandshake, ShieldCheck, Clock, Ruler } from "lucide-react";
 import { whatsappLink } from "@/lib/site";
+import { Sparkle, Dot } from "@/components/Decor";
 
 const plans = [
   {
@@ -78,7 +79,12 @@ const trustItems = [
 
 export default function Servicios() {
   return (
-    <section id="servicios" className="bg-section-gradient scroll-mt-20 py-20">
+    <section id="servicios" className="relative overflow-hidden bg-section-gradient scroll-mt-20 py-20">
+      <Sparkle className="absolute left-[4%] top-16 hidden lg:block" color="var(--color-pink-light)" delay={0.5} />
+      <Sparkle className="absolute right-[5%] top-40 hidden sm:block" size={18} color="var(--color-primary-light)" delay={1.8} />
+      <Dot className="absolute right-[3%] top-12 hidden lg:block" color="var(--color-sky)" size={12} delay={1} />
+      <Dot className="absolute left-[6%] bottom-16 hidden sm:block" color="var(--color-pink)" size={10} delay={2.2} />
+
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="flex items-center justify-center gap-2 font-heading font-semibold text-pink-dark">
