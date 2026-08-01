@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdf3fb;
+  --foreground: #1c2452;
+
+  --color-navy: #1c2452;
+  --color-navy-light: #2a3570;
+
+  --color-primary: #a48ceb;
+  --color-primary-light: #c9b8f5;
+  --color-primary-dark: #8a6fe0;
+
+  --color-pink: #ec6bb0;
+  --color-pink-light: #f7a8d0;
+  --color-pink-dark: #e0439a;
+
+  --color-sky: #a9ddf7;
+  --color-sky-light: #d3eefb;
+
+  --color-cream: #fdf3fb;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-navy: var(--color-navy);
+  --color-navy-light: var(--color-navy-light);
+
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
+
+  --color-pink: var(--color-pink);
+  --color-pink-light: var(--color-pink-light);
+  --color-pink-dark: var(--color-pink-dark);
+
+  --color-sky: var(--color-sky);
+  --color-sky-light: var(--color-sky-light);
+
+  --color-cream: var(--color-cream);
+
+  --font-heading: var(--font-baloo);
+  --font-sans: var(--font-jakarta);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), var(--font-sans), sans-serif;
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #fdf1fa 0%, #f3ecfb 45%, #e9f4fc 100%);
+}
+
+.bg-section-gradient {
+  background: linear-gradient(180deg, #fdf3fb 0%, #f2ecfb 100%);
+}
+
+.text-balance {
+  text-wrap: balance;
 }
