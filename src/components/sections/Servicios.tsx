@@ -87,7 +87,11 @@ export default function Servicios() {
       <Dot className="absolute right-[3%] top-12 hidden lg:block" color="var(--color-sky)" size={12} delay={1} />
       <Dot className="absolute left-[6%] bottom-16 hidden sm:block" color="var(--color-pink)" size={10} delay={2.2} />
 
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+      {/* Íconos 3D flotando a los costados del encabezado */}
+      <Image src="/mockups/svc-calc-coins.png" alt="" aria-hidden width={386} height={291} className="animate-float pointer-events-none absolute left-[1%] top-24 z-0 hidden w-28 select-none lg:block xl:w-36" style={{ animationDelay: "0.4s" }} />
+      <Image src="/mockups/svc-clipboard-check.png" alt="" aria-hidden width={271} height={337} className="animate-float pointer-events-none absolute right-[1%] top-24 z-0 hidden w-24 select-none lg:block xl:w-32" style={{ animationDelay: "1.5s" }} />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
         <div className="reveal mx-auto max-w-2xl text-center">
           <p className="flex items-center justify-center gap-2 font-heading font-semibold text-pink-dark">
             <span className="h-1.5 w-1.5 rounded-full bg-pink" />
