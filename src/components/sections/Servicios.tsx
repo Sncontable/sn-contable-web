@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Check, MessageCircle } from "lucide-react";
+import { Check } from "lucide-react";
+import WhatsappIcon from "@/components/WhatsappIcon";
 import { whatsappLink } from "@/lib/site";
 import { Sparkle, Dot } from "@/components/Decor";
 
@@ -142,7 +143,7 @@ export default function Servicios() {
                 rel="noopener noreferrer"
                 className="mt-6 flex items-center justify-center gap-2 rounded-full bg-navy px-5 py-3 font-heading font-semibold text-white transition-colors hover:bg-navy-light"
               >
-                <MessageCircle size={18} />
+                <WhatsappIcon size={18} />
                 Cotiza por WhatsApp
               </a>
             </div>
