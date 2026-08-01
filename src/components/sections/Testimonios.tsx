@@ -81,8 +81,8 @@ export default function Testimonios() {
 
         <div className="mt-14 grid items-stretch gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map(({ name, avatar, quote }) => (
-            <div key={name} className="relative h-full pb-6">
-              <div className="flex h-full flex-col rounded-3xl bg-white p-6 text-left shadow-md shadow-primary/10 ring-1 ring-black/5">
+            <div key={name} className="relative h-full">
+              <div className="relative flex h-full flex-col rounded-[28px] bg-white p-6 text-left shadow-[0_20px_45px_-15px_rgba(124,92,214,0.22)] ring-1 ring-[#ece7f5]">
                 <div className="flex items-center gap-3">
                   <Image
                     src={avatar}
@@ -99,17 +99,18 @@ export default function Testimonios() {
                 </div>
                 <p className="mt-4 flex-1 text-navy/75">&ldquo;{quote}&rdquo;</p>
                 <p className="mt-4 font-heading font-bold text-navy">{name}</p>
+                {/* Colita del globo (pegada al borde inferior) */}
+                <svg
+                  viewBox="0 0 40 30"
+                  className="absolute -bottom-[18px] left-[16%] h-[26px] w-[36px]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 0 L35 0 C27 3 23 13 21 25 C20.5 28.5 19.5 28.5 19 25 C17 13 13 3 5 0 Z"
+                    fill="white"
+                  />
+                </svg>
               </div>
-              <svg
-                viewBox="0 0 30 24"
-                className="absolute -bottom-[14px] left-10 h-6 w-7 drop-shadow-[0_5px_3px_rgba(80,40,160,0.06)]"
-                aria-hidden="true"
-              >
-                <path
-                  d="M3 0 L27 0 C23 4 19 12 17 19 C16 22 14 22 13 19 C11 12 7 4 3 0 Z"
-                  fill="white"
-                />
-              </svg>
             </div>
           ))}
         </div>
