@@ -9,7 +9,7 @@ import { site, whatsappLink } from "@/lib/site";
 const links = [
   { href: "/", label: "Inicio" },
   { href: "/#servicios", label: "Servicios" },
-  { href: "/#somos", label: "Somos" },
+  { href: "/#somos", label: "Quiénes Somos" },
   { href: "/#contacto", label: "Contacto" },
 ];
 
