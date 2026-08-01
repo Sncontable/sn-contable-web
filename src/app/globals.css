@@ -84,8 +84,25 @@ h4 {
   animation: float-y 5s ease-in-out infinite;
 }
 
+@keyframes twinkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.18) rotate(14deg);
+    opacity: 1;
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 3.5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-float {
+  .animate-float,
+  .animate-twinkle {
     animation: none;
   }
 }
