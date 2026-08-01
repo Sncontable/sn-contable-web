@@ -51,9 +51,9 @@ export default function Hero() {
                 letterSpacing: "-0.035em",
               }}
             >
-              <span className="block text-[#082C73]">Contabilidad,</span>
-              <span className="block text-[#ED68AC]">remuneraciones y</span>
-              <span className="block text-[#082C73]">asesoría tributaria</span>
+              <span className="block text-[#082C73]">Contabilidad,</span>{" "}
+              <span className="block text-[#ED68AC]">remuneraciones y</span>{" "}
+              <span className="block text-[#082C73]">asesoría tributaria</span>{" "}
               <span className="block text-[#ED68AC]">a tu medida</span>
             </h1>
 

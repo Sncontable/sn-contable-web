@@ -51,9 +51,9 @@ export default function Testimonios() {
             letterSpacing: "-0.035em",
           }}
         >
-          <span className="block text-[#082C73]">Recomendación</span>
+          <span className="block text-[#082C73]">Recomendación</span>{" "}
           <span className="mt-2 flex items-center justify-center gap-2">
-            <span className="text-[#082C73]">de</span>
+            <span className="text-[#082C73]">de</span>{" "}
             <span className="relative text-[#ED68AC]">
               Clientes
               <svg

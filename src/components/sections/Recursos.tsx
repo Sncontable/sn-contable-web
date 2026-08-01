@@ -61,7 +61,7 @@ export default function Recursos() {
               letterSpacing: "-0.035em",
             }}
           >
-            <span className="block text-navy">Aprende, infórmate y crece</span>
+            <span className="block text-navy">Aprende, infórmate y crece</span>{" "}
             <span className="relative inline-block text-pink-dark">
               con tu negocio
               <svg
