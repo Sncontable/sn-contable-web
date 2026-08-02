@@ -121,6 +121,18 @@ export default function Footer() {
             Contáctanos
           </Link>
         </div>
+
+        <p className="mt-3 text-center text-xs text-white/30">
+          Desarrollado por{" "}
+          <a
+            href="https://wa.me/56935416711?text=Hola%20vengo%20del%20sitio%20web%20de%20sn%20contable%20y%20quisiera%20realizar%20el%20m%C3%ADo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-white/30 underline-offset-2 transition-colors hover:text-white/70 hover:decoration-white/70"
+          >
+            Eduardo Rivera
+          </a>
+        </p>
       </div>
     </footer>
   );
